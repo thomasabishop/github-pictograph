@@ -1,7 +1,7 @@
 {
-  "name": "sine-qua-non",
+  "name": "github-pictograph",
   "version": "1.0.0",
-  "description": "A Webpack boilerplate for use as a foundation for static sites and applications",
+  "description": "Recreation of the GitHub pictograph using React and TypeScript",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
@@ -43,14 +43,10 @@
     "webpack-prettier-plugin": "^1.0.3"
   },
   "dependencies": {
-    "chalk": "^2.4.2",
-    "clear": "^0.1.0",
-    "enquirer": "^2.3.6",
-    "figlet": "^1.5.0",
     "path": "^0.12.7"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:thomasabishop/sinequanon.git"
+    "url": "git@github.com:thomasabishop/github-pictograph.git"
   }
 }
