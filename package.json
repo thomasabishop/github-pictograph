@@ -46,7 +46,10 @@
     "webpack-prettier-plugin": "^1.0.3"
   },
   "dependencies": {
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": "^4.3.2"
   },
   "repository": {
     "type": "git",
