@@ -1,5 +1,5 @@
 {
-  "ignorePatterns": ["dist", "node_modules"],
+  "ignorePatterns": ["dist", "node_modules", "config"],
   "rules": {
     "max-len": [
       "error",
@@ -32,11 +32,22 @@
     "import/no-extraneous-dependencies": ["off", { "devDependencies": false }],
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
   },
   "env": {
     "browser": true,
-    "es6": true
+    "es6": true,
+    "jest/globals": true
   },
   "extends": [
     "eslint:recommended",
@@ -54,7 +65,7 @@
     "ecmaVersion": 11,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "jest", "prettier"],
   "settings": {
     "import/resolver": {
       "webpack": {
