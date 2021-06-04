@@ -6,7 +6,7 @@ const paths = require('./paths')
 
 module.exports = {
   // Specify entrypoint: where Webpack will compile from
-  entry: [paths.src + '/index.js'],
+  entry: [paths.src + '/index.tsx'],
   // Specify output: where Webpack will compile to
   output: {
     path: paths.build,
@@ -36,9 +36,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['ts-loader'],
       },
       // Images (using types not loaders): copy to build dir
       {
@@ -54,7 +59,7 @@ module.exports = {
   },
   resolve: {
     modules: [paths.src, 'node_modules'],
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
       '@': paths.src,
     },
