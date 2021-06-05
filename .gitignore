@@ -1,5 +1,5 @@
 dist/
 old-readme.md
-
+src/api/credentials
 .DS_Store 
 node_modules
