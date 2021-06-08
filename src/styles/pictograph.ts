@@ -3,7 +3,6 @@ import styled from 'styled-components'
 const PictographContainer = styled.div`
   display: flex;
 `
-
 const Year = styled.div`
   overflow: auto;
   padding: 1rem;

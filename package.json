@@ -7,8 +7,7 @@
     "start": "cross-env NODE_ENV=development webpack serve --config config/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.prod.js",
     "lint": "eslint . src config || true",
-    "test": "jest",
-    "ts": "tsc --watch"
+    "test": "jest"
   },
   "keywords": [],
   "author": "Thomas Bishop",
@@ -17,6 +16,7 @@
     "@babel/core": "^7.14.0",
     "@babel/preset-env": "^7.14.0",
     "@fullhuman/postcss-purgecss": "^4.0.3",
+    "@octokit/types": "^6.16.2",
     "@types/jest": "^26.0.23",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",

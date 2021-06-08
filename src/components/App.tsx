@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Pictograph from './Pictograph'
+import '../api/getCommits'
 
 const Wrapper = styled.div`
   display: 'flex';
