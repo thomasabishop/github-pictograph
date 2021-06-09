@@ -1,0 +1,25 @@
+@import '~bootstrap/scss/bootstrap';
+
+.main {
+  margin: 1rem 2rem;
+}
+
+.CardHeader {
+  background: rgba(0, 0, 0, 0.03);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.UserImage {
+  padding: 0.75rem 1.25rem;
+}
+
+.SparkLine {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+// Bootstrap Overrides
+
+.card-header {
+  background: transparent;
+  border: 0;
+}

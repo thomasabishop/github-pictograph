@@ -1,22 +1,22 @@
 import React from 'react'
-import styled from 'styled-components'
-import Pictograph from './Pictograph'
 import '../api/getCommits'
-
-const Wrapper = styled.div`
-  display: 'flex';
-  align-items: 'center';
-  justify-content: center;
-  margin: 2rem;
-  color: #131314;
-  font-family: Arial, Helvetica, sans-serif;
-`
+import '../styles/App.scss'
+import { Container, Row, Col } from 'react-bootstrap'
+import Header from './Header'
+import SearchForm from './Form'
+import DataCard from './DataCard'
 
 const App: React.FunctionComponent = () => (
-  <Wrapper>
-    <h2>Recreation of the GitHub Contribution Pictograph</h2>
-    <Pictograph />
-  </Wrapper>
+  <>
+    <Header />
+    <Container fluid>
+      <Row>
+        <Col xs={12}>
+          <SearchForm />
+          <DataCard />
+        </Col>
+      </Row>
+    </Container>
+  </>
 )
-
 export default App
