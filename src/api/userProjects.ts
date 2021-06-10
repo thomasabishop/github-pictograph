@@ -15,7 +15,7 @@ async function queryUserApi(
 ): Promise<userProjectsResponse['data']> {
   const octokit = new Octokit({ auth: ghToken })
   const response = await octokit.request(
-    `Get /users/${options.username}/repos?per_page=100`
+    `GET /users/${options.username}/repos?per_page=100`
   )
   const data = response.data //eslint-disable-line
   return data
