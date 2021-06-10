@@ -1,2 +1,2 @@
-export const ghToken = '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'
+export const ghToken = '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'
 // GET /users/:username/events

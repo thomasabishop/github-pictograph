@@ -1,5 +1,7 @@
 import React from 'react'
-import '../api/getCommits'
+//import '../api/getCommits'
+import '../api/getContributionData'
+import '../api/userProjects'
 import '../styles/App.scss'
 import { Container, Row, Col } from 'react-bootstrap'
 import Header from './Header'
