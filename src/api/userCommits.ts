@@ -3,7 +3,7 @@
 
 import { Octokit } from 'octokit'
 import { Endpoints } from '@octokit/types'
-import { ghToken } from './credentials'
+import { ghToken } from '../credentials'
 
 type userCommitsParameters =
   Endpoints['GET /repos/{owner}/{repo}/commits']['parameters']
@@ -11,7 +11,7 @@ type userCommitsParameters =
 type userCommitsResponse =
   Endpoints['GET /repos/{owner}/{repo}/commits']['response']
 
-type CommitData = {
+export type CommitData = {
   date: string | undefined
   message: string
 }
@@ -50,5 +50,3 @@ export async function userCommits(
 
   throw new Error()
 }
-
-//console.log(userCommits('thomasabishop', 'js-kata'))

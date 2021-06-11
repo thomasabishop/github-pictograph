@@ -3,7 +3,7 @@
 
 import { Octokit } from 'octokit'
 import { Endpoints } from '@octokit/types'
-import { ghToken } from './credentials'
+import { ghToken } from '../credentials'
 
 type userProjectsParameters =
   Endpoints['GET /users/{username}/repos']['parameters']
@@ -39,6 +39,6 @@ export async function userProjects(user: string): Promise<string[]> {
   throw new Error()
 }
 
-console.log(userProjects('thomasabishop'))
+//console.log(userProjects('thomasabishop'))
 
 // Check that error carries through to wrapper function

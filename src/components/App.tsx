@@ -1,9 +1,9 @@
 import React from 'react'
-//import '../api/getCommits'
-import '../api/getContributionData'
 import '../api/userProjects'
 import '../api/userCommits'
 import '../styles/App.scss'
+import '../api/userContributions'
+
 import { Container, Row, Col } from 'react-bootstrap'
 import Header from './Header'
 import SearchForm from './Form'
