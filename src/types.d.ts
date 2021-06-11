@@ -1,0 +1,3 @@
+type Contributor = {
+  user: string
+}

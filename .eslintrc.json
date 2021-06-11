@@ -12,6 +12,7 @@
       }
     ],
     "no-var": 1,
+    "no-undef": [0, { "extensions": [".ts", ".tsx"] }],
     "camelcase": 1,
     "no-new-wrappers": 1,
     "no-nested-ternary": 1,
