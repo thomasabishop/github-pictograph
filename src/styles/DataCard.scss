@@ -29,8 +29,15 @@
 }
 
 .DataCard--body {
-  @include horizontalFlex;
-
   padding: 12px 12px;
+}
+
+.DataCard--summary {
+  @include horizontalFlex;
   justify-content: space-between;
+}
+
+.Sparkline {
+  width: 80px;
+  padding-bottom: 15px;
 }

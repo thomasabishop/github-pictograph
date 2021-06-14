@@ -1,0 +1,50 @@
+// Create varigated green hues for commit frequency
+@for $i from 1 through 9 {
+  .day-color-#{$i} {
+    background-color: darken(#ebfff1, $i * 9);
+  }
+}
+
+.day-color-start {
+  background-color: #e8e8e8;
+}
+
+// Root component
+.Pictograph {
+  display: flex;
+  //  padding: 1rem;
+}
+
+.year {
+  overflow: auto;
+  padding: 1rem;
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  //flex: 1 0 100%;
+  display: grid;
+  grid-template-columns: repeat(52, 12px);
+  //grid-template-rows: 1fr;
+  grid-column-gap: 3px;
+  min-height: 0;
+  min-width: 0;
+}
+
+.week {
+  display: inline-grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(7, 1fr);
+  grid-row-gap: 3px;
+  // border: 1px solid red;
+  min-width: 0;
+  overflow: hidden;
+  & > div {
+    align-items: center;
+    justify-content: center;
+    //border: 1px solid lightgrey;
+    border-radius: 3px;
+    // padding: 10px;
+    font-size: 10px;
+    width: 12px;
+    height: 12px;
+  }
+}
