@@ -10,7 +10,7 @@ const Header: React.FunctionComponent = () => (
           alt=""
           width="40"
           src={octocat}
-          className="d-inline-block align-top mr-3"
+          className="d-inline-block align-top mr-2"
         />
         GitHub Contributors Recreation
       </Navbar.Brand>

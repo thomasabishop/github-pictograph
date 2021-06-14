@@ -1,0 +1,36 @@
+@mixin horizontalFlex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.DataCard {
+  border: 1px solid #ced4da;
+  border-radius: 0.2rem;
+  margin-top: 1rem;
+}
+
+.DataCard--header {
+  @include horizontalFlex;
+  padding: 5px 12px;
+  background: rgba(0, 0, 0, 0.03);
+  //border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  margin-top: 0;
+
+  &_name {
+    padding-top: 5px;
+    //margin-bottom: 0;
+  }
+
+  img {
+    margin-right: 0.5rem;
+    max-width: 35px;
+  }
+}
+
+.DataCard--body {
+  @include horizontalFlex;
+
+  padding: 12px 12px;
+  justify-content: space-between;
+}

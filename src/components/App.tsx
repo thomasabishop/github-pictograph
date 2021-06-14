@@ -1,13 +1,11 @@
 import React from 'react'
-import '../api/userProjects'
-import '../api/userCommits'
 import '../styles/App.scss'
-import '../api/userContributions'
 import { Container, Row, Col } from 'react-bootstrap'
 import Header from './Header'
 import SearchForm from './SearchForm'
 import DataCard from './DataCard'
 import { ContributorProvider } from '../state/ContributorContext'
+import '../api/contributorData'
 
 const App: React.FunctionComponent = () => (
   <>

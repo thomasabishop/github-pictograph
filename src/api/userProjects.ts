@@ -30,12 +30,9 @@ export async function userProjects(user: string): Promise<string[]> {
     })
     return projects
   } catch (error) {
-    if (error.code === 404) {
-      console.log('User could not be found') //eslint-disable-line
-    } else {
-      console.error(error) //eslint-disable-line
-    }
+    console.error(error) //eslint-disable-line
   }
+
   throw new Error()
 }
 

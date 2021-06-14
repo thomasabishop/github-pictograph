@@ -1,23 +1,25 @@
-import React from 'react'
-import Card from 'react-bootstrap/Card'
+import React, { useState, useEffect } from 'react'
 import Sparkline from './Sparkline'
 import { useContributor } from '../state/ContributorContext'
+import CardBody from './CardBody'
+import CardHeader from './CardHeader'
 
 const DataCard: React.FunctionComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-  const { contributor, setContributor } = useContributor()!
-  setContributor('paddington')
+  const { contributor } = useContributor()!
+  const [info, setInfo] = useState<any>()
+  useEffect(() => {
+    if (contributor) {
+      //
+    }
+  }, [contributor])
+
   return (
     <>
-      <Card className="mt-4">
-        <div className="d-inline-flex flex-row CardHeader align-items-center justify-content-between">
-          <Card.Header as="h5">@{contributor}</Card.Header>
-          <div className="UserImage">image</div>
-        </div>
-        <Card.Body>
-          <Sparkline />
-        </Card.Body>
-      </Card>
+      <div className="DataCard">
+        <CardHeader />
+        <CardBody />
+      </div>
     </>
   )
 }

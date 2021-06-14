@@ -1,4 +1,4 @@
-/* eslint-disable import/no-unresolved */
+/* eslint-hdisable import/no-unresolved */
 /* eslint-disable import/extensions */
 
 import { Octokit } from 'octokit'
