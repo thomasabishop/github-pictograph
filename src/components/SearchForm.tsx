@@ -1,18 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { useForm } from 'react-hook-form'
 import { Row, Col } from 'react-bootstrap'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 import { useContributor } from '../state/ContributorContext'
 
+type TContributorFormInput = {
+  username: string
+}
+
 const SearchForm: React.FunctionComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { setContributor } = useContributor()!
-  const { register, handleSubmit } = useForm<ContributorFormInput>()
-  const onSubmit = (data: ContributorFormInput): void => {
+  const { register, handleSubmit } = useForm<TContributorFormInput>()
+  const onSubmit = (data: TContributorFormInput): void => {
     setContributor(data.username)
   }
-
   return (
     <>
       <Form className="pt-4" onSubmit={handleSubmit(onSubmit)}>
