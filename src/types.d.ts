@@ -2,8 +2,9 @@
 declare module '*.png'
 declare module '*.svg'
 
-type ContributorFormInput = {
+type TContributor = {
   username: string
+  userImage: string
 }
 
 type Contributions = {
@@ -33,8 +34,4 @@ contributor: {
     ]
   }
 }
-
-
-
-
 */
