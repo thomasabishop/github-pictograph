@@ -3,6 +3,7 @@ import { useContributor } from '../state/ContributorContext'
 import { contributorDetails } from '../api/contributorData'
 import CardBody from './CardBody'
 import CardHeader from './CardHeader'
+
 import blankAvatar from '../images/blank-avatar.png'
 
 const startData: TContributor = {
