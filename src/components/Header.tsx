@@ -6,12 +6,12 @@ const Header: React.FunctionComponent = () => (
   <>
     <Navbar variant="dark" bg="primary">
       <Navbar.Brand href="#home">
-        <img
+        {/* <img
           alt=""
           width="30"
           src={octocat}
           className="d-inline-block align-top mr-2"
-        />
+        /> */}
         GitHub Contributions
       </Navbar.Brand>
       <Nav className="justify-content-end">
