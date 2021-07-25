@@ -1,9 +1,6 @@
-import { Octokit } from 'octokit'
-import { Endpoints } from '@octokit/types'
-import { ghToken } from '../credentials'
 import { IContributor } from '../model/IContributor'
-import queryUserIdentity from './queryUserIdentity'
-import queryUserEvents from './queryUserEvents'
+import queryUserIdentity from '../api/queryUserIdentity'
+import queryUserEvents from '../api/queryUserEvents'
 /**
  * Match user-inputted name to User database. If valid, return validated GH username and interpolate user image URL from this
  */
@@ -11,7 +8,7 @@ import queryUserEvents from './queryUserEvents'
 // TO-DO:
 // Link this function to error handling of form input
 
-export async function getContributorDetails(
+export async function getContributorData(
   contributorName: string
 ): Promise<IContributor> {
   try {
@@ -22,6 +19,7 @@ export async function getContributorDetails(
       username: contributorName,
     })
     console.log(contributorEvents)
+
     if (contributorDetails.login === contributorName) {
       const contributor: TContributor = {
         username: contributorDetails.login,
