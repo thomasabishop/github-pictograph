@@ -1,42 +1,30 @@
 import { Octokit } from 'octokit'
 import { Endpoints } from '@octokit/types'
 import { ghToken } from '../credentials'
-
-type userParameters = Endpoints['GET /users/{username}']['parameters']
-type userResponse = Endpoints['GET /users/{username}']['response']
-
-/**
- * Generic query of GH User API
- */
-
-async function queryUserApi(
-  options: userParameters
-): Promise<userResponse['data']> {
-  const octokit = new Octokit({ auth: ghToken })
-  try {
-    const response = await octokit.request(`GET /users/${options.username}`)
-    const data = response.data //eslint-disable-line
-    return data
-  } catch (error) {
-    console.error(error) //eslint-disable-line
-  }
-  throw new Error('Something else went wrong')
-}
-
+import { IContributor } from '../model/IContributor'
+import queryUserIdentity from './queryUserIdentity'
+import queryUserEvents from './queryUserEvents'
 /**
  * Match user-inputted name to User database. If valid, return validated GH username and interpolate user image URL from this
  */
 
 // TO-DO:
 // Link this function to error handling of form input
-export async function contributorDetails(
+
+export async function getContributorDetails(
   contributorName: string
-): Promise<TContributor> {
+): Promise<IContributor> {
   try {
-    const checkUser = await queryUserApi({ username: contributorName })
-    if (checkUser.login === contributorName) {
+    const contributorDetails = await queryUserIdentity({
+      username: contributorName,
+    })
+    const contributorEvents = await queryUserEvents({
+      username: contributorName,
+    })
+    console.log(contributorEvents)
+    if (contributorDetails.login === contributorName) {
       const contributor: TContributor = {
-        username: checkUser.login,
+        username: contributorDetails.login,
         userImage: `https://github.com/${contributorName}.png`,
       }
       return contributor

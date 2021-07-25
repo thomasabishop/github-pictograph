@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useContributor } from '../state/ContributorContext'
-import { contributorDetails } from '../api/contributorData'
+import { getContributorDetails } from '../api/contributorData'
 import CardBody from './CardBody'
 import CardHeader from './CardHeader'
-
 import blankAvatar from '../images/blank-avatar.png'
+import { IContributor } from '../model/IContributor'
 
-const startData: TContributor = {
+const startData: IContributor = {
   username: 'Contributor',
   userImage: blankAvatar,
 }
@@ -15,11 +15,11 @@ const DataCard: React.FunctionComponent = () => {
   // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { contributor } = useContributor()!
   const [contributorData, setContributorData] =
-    useState<TContributor>(startData)
+    useState<IContributor>(startData)
 
   useEffect(() => {
     if (contributor) {
-      contributorDetails(contributor).then((response) => {
+      getContributorDetails(contributor).then((response) => {
         setContributorData(response)
       })
     }
