@@ -12,7 +12,6 @@ const startData: IContributor = {
 }
 
 const DataCard: React.FunctionComponent = () => {
-  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const { contributor } = useContributor()!
   const [contributorData, setContributorData] =
     useState<IContributor>(startData)
@@ -22,6 +21,7 @@ const DataCard: React.FunctionComponent = () => {
       getContributorData(contributor).then((response) => {
         setContributorData(response)
       })
+      console.log(contributorData)
     }
   }, [contributor])
   return (
