@@ -7,10 +7,10 @@ export interface IContributor {
 
 export interface IContributionsFrequency {
   totalContributions: number
-  commits?: number
-  issues?: number
-  pullRequests?: number
-  newRepos?: number
+  commits: number
+  pullRequests: number
+  newRepos: number
+  forks: number
 }
 
 export interface IContributorEvents {}
