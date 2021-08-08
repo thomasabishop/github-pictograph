@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useContributor } from '../state/ContributorContext'
-import { getContributorDetails } from '../api/contributorData'
+import { getContributorData } from '../functions/getContributorData'
 import CardBody from './CardBody'
 import CardHeader from './CardHeader'
 import blankAvatar from '../images/blank-avatar.png'
@@ -19,7 +19,7 @@ const DataCard: React.FunctionComponent = () => {
 
   useEffect(() => {
     if (contributor) {
-      getContributorDetails(contributor).then((response) => {
+      getContributorData(contributor).then((response) => {
         setContributorData(response)
       })
     }

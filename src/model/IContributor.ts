@@ -5,12 +5,12 @@ export interface IContributor {
   events?: IContributorEvents
 }
 
-interface IContributionsFrequency {
+export interface IContributionsFrequency {
   totalContributions: number
-  commits: number
-  issues: number
-  pullRequests: number
-  newRepos: number
+  commits?: number
+  issues?: number
+  pullRequests?: number
+  newRepos?: number
 }
 
 export interface IContributorEvents {}

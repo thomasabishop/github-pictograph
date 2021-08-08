@@ -1,6 +1,7 @@
 import { IContributor } from '../model/IContributor'
 import queryUserIdentity from '../api/queryUserIdentity'
 import queryUserEvents from '../api/queryUserEvents'
+import getContributionFrequencies from './getContributionFrequencies'
 /**
  * Match user-inputted name to User database. If valid, return validated GH username and interpolate user image URL from this
  */
@@ -19,7 +20,8 @@ export async function getContributorData(
       username: contributorName,
     })
     console.log(contributorEvents)
-
+    const contributorFreqs = await getContributionFrequencies(contributorName)
+    console.log(contributorFreqs)
     if (contributorDetails.login === contributorName) {
       const contributor: TContributor = {
         username: contributorDetails.login,

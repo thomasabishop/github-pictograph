@@ -5,7 +5,7 @@ import Header from './Header'
 import SearchForm from './SearchForm'
 import DataCard from './DataCard'
 import { ContributorProvider } from '../state/ContributorContext'
-import '../api/contributorData'
+import '../functions/getContributorData'
 
 const App: React.FunctionComponent = () => (
   <>
