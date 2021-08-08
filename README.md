@@ -13,3 +13,7 @@ The general architecture is: all data is will be contained within the `IContribu
 - Contributions API
   - Ensure user id matches committer id
   - Find per page parameter for `userCommits`
+
+# Vars
+
+`contributorData` = variable holding data of type `IContributor`
