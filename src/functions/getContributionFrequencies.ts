@@ -1,3 +1,8 @@
+/**
+ * Return Promise object of shape `IContributionsFrequency` detailing specified GitHub events for user.
+ * @param username valid GitHub contributor name
+ */
+
 import { IContributionsFrequency } from '../model/IContributor'
 import queryUserEvents from '../api/queryUserEvents'
 
@@ -17,6 +22,7 @@ export default async function getContributionFrequencies(
       newRepos: 0,
       forks: 0,
     }
+    // Don't want to use non-null assertion so liberally but don't know how to avoid it's use. The values can't be `possibly undefined` because they are initialised to `0` before the switch statement executes, so confused.
     for (const event of rawContributorEventData) {
       switch (event.type) {
         case 'PushEvent':
